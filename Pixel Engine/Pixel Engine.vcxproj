@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{082B2A54-B9A4-40BF-AE53-F61CB539E80B}</ProjectGuid>
+    <RootNamespace>RenderingPrototypeSystem</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>PGOptimize</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)intermidiate/$(ProjectName)/$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)intermidiate/$(ProjectName)/$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin/$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)intermidiate/$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)/Math/Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SFML_STATIC;GLEW_STATIC;_USE_MATH_DEFINES;IRRKLANG_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ForcedIncludeFiles>C:\Dev\Projects\Visual Studio\C++\Pixel Engine\Pixel Engine\Source\Utils\DataTypes.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype-d.lib;freetype-gl-d.lib;openal32.lib;ogg.lib;vorbis.lib;vorbisfile.lib;vorbisenc.lib;"Gorilla Audio.lib";freetype.lib;Math-d.lib;sfml-main-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;soil2-debug.lib;%(AdditionalDependencies);opengl32.lib;winmm.lib;gdi32.lib;glew32s.lib</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$SolutionDir)lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32s.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-main.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;openal32.lib;"gorilla audio.lib";Freetype-d.lib;Freetype-gl-d.lib;soil2-d.lib;Math-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)/Math/Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SFML_STATIC;GLEW_STATIC;_USE_MATH_DEFINES;IRRKLANG_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <CompileAs>Default</CompileAs>
+      <OmitFramePointers>
+      </OmitFramePointers>
+      <EnableFiberSafeOptimizations>
+      </EnableFiberSafeOptimizations>
+      <ForcedIncludeFiles>E:/Visual Studio 2017/Projects/C++/Pixel Engine/Pixel Engine/Source/Utils/DataTypes.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype.lib;freetype-gl.lib;sfml-main.lib;sfml-system-s.lib;sfml-window-s.lib;soil2.lib;Math.lib;%(AdditionalDependencies);openal32.lib;ogg.lib;vorbis.lib;vorbisfile.lib;vorbisenc.lib;"Gorilla Audio.lib";opengl32.lib;winmm.lib;gdi32.lib;glew32s.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <CustomBuildStep>
+      <Command>/FI "E:\Visual Studio 2017\Projects\C++\Pixel Engine\Pixel Engine\Source\Utils/DataTypes.h"</Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32s.lib;sfml-window.lib;sfml-system.lib;sfml-main.lib;sfml-system.lib;ogg.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;openal32.lib;"gorilla audio.lib";Freetype.lib;Freetype-gl.lib;soil2.lib;Math.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$SolutionDir)lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <!-- <ClCompile Include="Application.h" /> -->
+    <ClCompile Include="Source\Audio\Music.cpp" />
+    <ClCompile Include="Source\Audio\AudioManager.cpp" />
+    <ClCompile Include="Source\Audio\Sound.cpp" />
+    <ClCompile Include="Source\ECS\SystemManager.cpp" />
+    <ClCompile Include="Source\ext\spdlog.cpp" />
+    <ClCompile Include="Source\Graphics\Buffers\Texture.cpp" />
+    <ClCompile Include="Source\Graphics\Buffers\VertexBuffer.cpp" />
+    <ClCompile Include="Source\Graphics\Buffers\IndexBuffer.cpp" />
+    <ClCompile Include="Source\Graphics\Buffers\VertexArray.cpp" />
+    <ClCompile Include="Source\Graphics\Camera\Camera2D.cpp" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afangles.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afblue.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afcjk.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afdummy.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afglobal.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afhints.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afindic.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\aflatin.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\aflatin2.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afloader.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afmodule.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afranges.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afshaper.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\afwarp.c" />
+    <ClCompile Include="Source\ext\Freetype\autofit\autofit.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftadvanc.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftbase.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftbbox.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftbdf.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftbitmap.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftcalc.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftcid.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftcolor.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftdbgmem.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftdebug.c" />
+    <ClCompile Include="Source\ext\Freetype\base\fterrors.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftfntfmt.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftfstype.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftgasp.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftgloadr.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftglyph.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftgxval.c" />
+    <ClCompile Include="Source\ext\Freetype\base\fthash.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftinit.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftlcdfil.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftmac.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftmm.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftobjs.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftotval.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftoutln.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftpatent.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftpfr.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftpsprop.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftrfork.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftsnames.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftstream.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftstroke.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftsynth.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftsystem.c" />
+    <ClCompile Include="Source\ext\Freetype\base\fttrigon.c" />
+    <ClCompile Include="Source\ext\Freetype\base\fttype1.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftutil.c" />
+    <ClCompile Include="Source\ext\Freetype\base\ftwinfnt.c" />
+    <ClCompile Include="Source\ext\Freetype\base\md5.c" />
+    <ClCompile Include="Source\ext\Freetype\bdf\bdf.c" />
+    <ClCompile Include="Source\ext\Freetype\bdf\bdfdrivr.c" />
+    <ClCompile Include="Source\ext\Freetype\bdf\bdflib.c" />
+    <ClCompile Include="Source\ext\Freetype\bzip2\ftbzip2.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftcache.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftcbasic.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftccache.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftccmap.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftcglyph.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftcimage.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftcmanag.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftcmru.c" />
+    <ClCompile Include="Source\ext\Freetype\cache\ftcsbits.c" />
+    <ClCompile Include="Source\ext\Freetype\cff\cff.c" />
+    <ClCompile Include="Source\ext\Freetype\cff\cffcmap.c" />
+    <ClCompile Include="Source\ext\Freetype\cff\cffdrivr.c" />
+    <ClCompile Include="Source\ext\Freetype\cff\cffgload.c" />
+    <ClCompile Include="Source\ext\Freetype\cff\cffload.c" />
+    <ClCompile Include="Source\ext\Freetype\cff\cffobjs.c" />
+    <ClCompile Include="Source\ext\Freetype\cff\cffparse.c" />
+    <ClCompile Include="Source\ext\Freetype\cid\cidgload.c" />
+    <ClCompile Include="Source\ext\Freetype\cid\cidload.c" />
+    <ClCompile Include="Source\ext\Freetype\cid\cidobjs.c" />
+    <ClCompile Include="Source\ext\Freetype\cid\cidparse.c" />
+    <ClCompile Include="Source\ext\Freetype\cid\cidriver.c" />
+    <ClCompile Include="Source\ext\Freetype\cid\type1cid.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvalid.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvbsln.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvcommn.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvfeat.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvfgen.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvjust.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvkern.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvlcar.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmod.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmort.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmort0.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmort1.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmort2.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmort4.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmort5.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmorx.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmorx0.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmorx1.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmorx2.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmorx4.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvmorx5.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvopbd.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvprop.c" />
+    <ClCompile Include="Source\ext\Freetype\gxvalid\gxvtrak.c" />
+    <ClCompile Include="Source\ext\Freetype\gzip\adler32.c" />
+    <ClCompile Include="Source\ext\Freetype\gzip\ftgzip.c" />
+    <ClCompile Include="Source\ext\Freetype\gzip\infblock.c" />
+    <ClCompile Include="Source\ext\Freetype\gzip\infcodes.c" />
+    <ClCompile Include="Source\ext\Freetype\gzip\inflate.c" />
+    <ClCompile Include="Source\ext\Freetype\gzip\inftrees.c" />
+    <ClCompile Include="Source\ext\Freetype\gzip\infutil.c" />
+    <ClCompile Include="Source\ext\Freetype\gzip\zutil.c" />
+    <ClCompile Include="Source\ext\Freetype\lzw\ftlzw.c" />
+    <ClCompile Include="Source\ext\Freetype\lzw\ftzopen.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvalid.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvbase.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvcommn.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvgdef.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvgpos.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvgsub.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvjstf.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvmath.c" />
+    <ClCompile Include="Source\ext\Freetype\otvalid\otvmod.c" />
+    <ClCompile Include="Source\ext\Freetype\pcf\pcf.c" />
+    <ClCompile Include="Source\ext\Freetype\pcf\pcfdrivr.c" />
+    <ClCompile Include="Source\ext\Freetype\pcf\pcfread.c" />
+    <ClCompile Include="Source\ext\Freetype\pcf\pcfutil.c" />
+    <ClCompile Include="Source\ext\Freetype\pfr\pfr.c" />
+    <ClCompile Include="Source\ext\Freetype\pfr\pfrcmap.c" />
+    <ClCompile Include="Source\ext\Freetype\pfr\pfrdrivr.c" />
+    <ClCompile Include="Source\ext\Freetype\pfr\pfrgload.c" />
+    <ClCompile Include="Source\ext\Freetype\pfr\pfrload.c" />
+    <ClCompile Include="Source\ext\Freetype\pfr\pfrobjs.c" />
+    <ClCompile Include="Source\ext\Freetype\pfr\pfrsbit.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\afmparse.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\cffdecode.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psarrst.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psaux.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psauxmod.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psblues.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psconv.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\pserror.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psfont.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psft.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\pshints.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psintrp.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psobjs.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psread.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\psstack.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\t1cmap.c" />
+    <ClCompile Include="Source\ext\Freetype\psaux\t1decode.c" />
+    <ClCompile Include="Source\ext\Freetype\pshinter\pshalgo.c" />
+    <ClCompile Include="Source\ext\Freetype\pshinter\pshglob.c" />
+    <ClCompile Include="Source\ext\Freetype\pshinter\pshinter.c" />
+    <ClCompile Include="Source\ext\Freetype\pshinter\pshmod.c" />
+    <ClCompile Include="Source\ext\Freetype\pshinter\pshrec.c" />
+    <ClCompile Include="Source\ext\Freetype\psnames\psmodule.c" />
+    <ClCompile Include="Source\ext\Freetype\psnames\psnames.c" />
+    <ClCompile Include="Source\ext\Freetype\raster\ftraster.c" />
+    <ClCompile Include="Source\ext\Freetype\raster\ftrend1.c" />
+    <ClCompile Include="Source\ext\Freetype\raster\raster.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\pngshim.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\sfdriver.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\sfnt.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\sfobjs.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttbdf.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttcmap.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttcolr.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttcpal.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttkern.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttload.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttmtx.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttpost.c" />
+    <ClCompile Include="Source\ext\Freetype\sfnt\ttsbit.c" />
+    <ClCompile Include="Source\ext\Freetype\smooth\ftgrays.c" />
+    <ClCompile Include="Source\ext\Freetype\smooth\ftsmooth.c" />
+    <ClCompile Include="Source\ext\Freetype\smooth\smooth.c" />
+    <ClCompile Include="Source\ext\Freetype\tools\apinames.c" />
+    <ClCompile Include="Source\ext\Freetype\tools\ftrandom\ftrandom.c" />
+    <ClCompile Include="Source\ext\Freetype\tools\test_afm.c" />
+    <ClCompile Include="Source\ext\Freetype\tools\test_bbox.c" />
+    <ClCompile Include="Source\ext\Freetype\tools\test_trig.c" />
+    <ClCompile Include="Source\ext\Freetype\truetype\truetype.c" />
+    <ClCompile Include="Source\ext\Freetype\truetype\ttdriver.c" />
+    <ClCompile Include="Source\ext\Freetype\truetype\ttgload.c" />
+    <ClCompile Include="Source\ext\Freetype\truetype\ttgxvar.c" />
+    <ClCompile Include="Source\ext\Freetype\truetype\ttinterp.c" />
+    <ClCompile Include="Source\ext\Freetype\truetype\ttobjs.c" />
+    <ClCompile Include="Source\ext\Freetype\truetype\ttpload.c" />
+    <ClCompile Include="Source\ext\Freetype\truetype\ttsubpix.c" />
+    <ClCompile Include="Source\ext\Freetype\type1\t1afm.c" />
+    <ClCompile Include="Source\ext\Freetype\type1\t1driver.c" />
+    <ClCompile Include="Source\ext\Freetype\type1\t1gload.c" />
+    <ClCompile Include="Source\ext\Freetype\type1\t1load.c" />
+    <ClCompile Include="Source\ext\Freetype\type1\t1objs.c" />
+    <ClCompile Include="Source\ext\Freetype\type1\t1parse.c" />
+    <ClCompile Include="Source\ext\Freetype\type1\type1.c" />
+    <ClCompile Include="Source\ext\Freetype\type42\t42drivr.c" />
+    <ClCompile Include="Source\ext\Freetype\type42\t42objs.c" />
+    <ClCompile Include="Source\ext\Freetype\type42\t42parse.c" />
+    <ClCompile Include="Source\ext\Freetype\type42\type42.c" />
+    <ClCompile Include="Source\ext\Freetype\winfonts\winfnt.c" />
+    <ClCompile Include="Source\Graphics\IMGUI\imgui-SFML.cpp" />
+    <ClCompile Include="Source\Graphics\IMGUI\ImguiManager.cpp" />
+    <ClCompile Include="Source\Graphics\Renderers\BatchRenderer.cpp" />
+    <ClCompile Include="Source\Graphics\Shader\Shader.cpp" />
+    <ClCompile Include="Source\Utils\IO\FileReader.cpp" />
+    <ClCompile Include="Source\Window\Input.cpp" />
+    <ClCompile Include="Source\Window\Window.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Source\API\PX.h" />
+    <ClInclude Include="Source\API\PX_Game.h" />
+    <ClInclude Include="Source\Audio\Music.h" />
+    <ClInclude Include="Source\Audio\AudioManager.h" />
+    <ClInclude Include="Source\Audio\Playable.h" />
+    <ClInclude Include="Source\Audio\Sound.h" />
+    <ClInclude Include="Source\ECS\Component.h" />
+    <ClInclude Include="Source\ECS\Entity.h" />
+    <ClInclude Include="Source\ECS\EntityManager.h" />
+    <ClInclude Include="Source\ECS\Physics.h" />
+    <ClInclude Include="Source\ECS\System.h" />
+    <ClInclude Include="Source\ECS\SystemManager.h" />
+    <ClInclude Include="Source\EngineSettings.h" />
+    <ClInclude Include="Source\Graphics\Buffers\Texture.h" />
+    <ClInclude Include="Source\Graphics\Buffers\VertexBuffer.h" />
+    <ClInclude Include="Source\Graphics\Buffers\Vertex.h" />
+    <ClInclude Include="Source\Graphics\Camera\Camera.h" />
+    <ClInclude Include="Source\Graphics\Camera\Camera2D.h" />
+    <ClInclude Include="Source\Graphics\Buffers\IndexBuffer.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afangles.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afblue.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afcjk.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afcover.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afdummy.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\aferrors.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afglobal.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afhints.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afindic.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\aflatin.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\aflatin2.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afloader.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afmodule.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afranges.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afscript.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afshaper.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afstyles.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\aftypes.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afwarp.h" />
+    <ClInclude Include="Source\ext\Freetype\autofit\afwrtsys.h" />
+    <ClInclude Include="Source\ext\Freetype\base\ftbase.h" />
+    <ClInclude Include="Source\ext\Freetype\base\md5.h" />
+    <ClInclude Include="Source\ext\Freetype\bdf\bdf.h" />
+    <ClInclude Include="Source\ext\Freetype\bdf\bdfdrivr.h" />
+    <ClInclude Include="Source\ext\Freetype\bdf\bdferror.h" />
+    <ClInclude Include="Source\ext\Freetype\cache\ftccache.h" />
+    <ClInclude Include="Source\ext\Freetype\cache\ftccback.h" />
+    <ClInclude Include="Source\ext\Freetype\cache\ftcerror.h" />
+    <ClInclude Include="Source\ext\Freetype\cache\ftcglyph.h" />
+    <ClInclude Include="Source\ext\Freetype\cache\ftcimage.h" />
+    <ClInclude Include="Source\ext\Freetype\cache\ftcmanag.h" />
+    <ClInclude Include="Source\ext\Freetype\cache\ftcmru.h" />
+    <ClInclude Include="Source\ext\Freetype\cache\ftcsbits.h" />
+    <ClInclude Include="Source\ext\Freetype\cff\cffcmap.h" />
+    <ClInclude Include="Source\ext\Freetype\cff\cffdrivr.h" />
+    <ClInclude Include="Source\ext\Freetype\cff\cfferrs.h" />
+    <ClInclude Include="Source\ext\Freetype\cff\cffgload.h" />
+    <ClInclude Include="Source\ext\Freetype\cff\cffload.h" />
+    <ClInclude Include="Source\ext\Freetype\cff\cffobjs.h" />
+    <ClInclude Include="Source\ext\Freetype\cff\cffparse.h" />
+    <ClInclude Include="Source\ext\Freetype\cff\cfftoken.h" />
+    <ClInclude Include="Source\ext\Freetype\cid\ciderrs.h" />
+    <ClInclude Include="Source\ext\Freetype\cid\cidgload.h" />
+    <ClInclude Include="Source\ext\Freetype\cid\cidload.h" />
+    <ClInclude Include="Source\ext\Freetype\cid\cidobjs.h" />
+    <ClInclude Include="Source\ext\Freetype\cid\cidparse.h" />
+    <ClInclude Include="Source\ext\Freetype\cid\cidriver.h" />
+    <ClInclude Include="Source\ext\Freetype\cid\cidtoken.h" />
+    <ClInclude Include="Source\ext\Freetype\gxvalid\gxvalid.h" />
+    <ClInclude Include="Source\ext\Freetype\gxvalid\gxvcommn.h" />
+    <ClInclude Include="Source\ext\Freetype\gxvalid\gxverror.h" />
+    <ClInclude Include="Source\ext\Freetype\gxvalid\gxvfeat.h" />
+    <ClInclude Include="Source\ext\Freetype\gxvalid\gxvmod.h" />
+    <ClInclude Include="Source\ext\Freetype\gxvalid\gxvmort.h" />
+    <ClInclude Include="Source\ext\Freetype\gxvalid\gxvmorx.h" />
+    <ClInclude Include="Source\ext\Freetype\gzip\ftzconf.h" />
+    <ClInclude Include="Source\ext\Freetype\gzip\infblock.h" />
+    <ClInclude Include="Source\ext\Freetype\gzip\infcodes.h" />
+    <ClInclude Include="Source\ext\Freetype\gzip\inffixed.h" />
+    <ClInclude Include="Source\ext\Freetype\gzip\inftrees.h" />
+    <ClInclude Include="Source\ext\Freetype\gzip\infutil.h" />
+    <ClInclude Include="Source\ext\Freetype\gzip\zlib.h" />
+    <ClInclude Include="Source\ext\Freetype\gzip\zutil.h" />
+    <ClInclude Include="Source\ext\Freetype\lzw\ftzopen.h" />
+    <ClInclude Include="Source\ext\Freetype\otvalid\otvalid.h" />
+    <ClInclude Include="Source\ext\Freetype\otvalid\otvcommn.h" />
+    <ClInclude Include="Source\ext\Freetype\otvalid\otverror.h" />
+    <ClInclude Include="Source\ext\Freetype\otvalid\otvgpos.h" />
+    <ClInclude Include="Source\ext\Freetype\otvalid\otvmod.h" />
+    <ClInclude Include="Source\ext\Freetype\pcf\pcf.h" />
+    <ClInclude Include="Source\ext\Freetype\pcf\pcfdrivr.h" />
+    <ClInclude Include="Source\ext\Freetype\pcf\pcferror.h" />
+    <ClInclude Include="Source\ext\Freetype\pcf\pcfread.h" />
+    <ClInclude Include="Source\ext\Freetype\pcf\pcfutil.h" />
+    <ClInclude Include="Source\ext\Freetype\pfr\pfrcmap.h" />
+    <ClInclude Include="Source\ext\Freetype\pfr\pfrdrivr.h" />
+    <ClInclude Include="Source\ext\Freetype\pfr\pfrerror.h" />
+    <ClInclude Include="Source\ext\Freetype\pfr\pfrgload.h" />
+    <ClInclude Include="Source\ext\Freetype\pfr\pfrload.h" />
+    <ClInclude Include="Source\ext\Freetype\pfr\pfrobjs.h" />
+    <ClInclude Include="Source\ext\Freetype\pfr\pfrsbit.h" />
+    <ClInclude Include="Source\ext\Freetype\pfr\pfrtypes.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\afmparse.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\cffdecode.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psarrst.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psauxerr.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psauxmod.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psblues.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psconv.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\pserror.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psfixed.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psfont.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psft.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psglue.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\pshints.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psintrp.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psobjs.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psread.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\psstack.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\pstypes.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\t1cmap.h" />
+    <ClInclude Include="Source\ext\Freetype\psaux\t1decode.h" />
+    <ClInclude Include="Source\ext\Freetype\pshinter\pshalgo.h" />
+    <ClInclude Include="Source\ext\Freetype\pshinter\pshglob.h" />
+    <ClInclude Include="Source\ext\Freetype\pshinter\pshmod.h" />
+    <ClInclude Include="Source\ext\Freetype\pshinter\pshnterr.h" />
+    <ClInclude Include="Source\ext\Freetype\pshinter\pshrec.h" />
+    <ClInclude Include="Source\ext\Freetype\psnames\psmodule.h" />
+    <ClInclude Include="Source\ext\Freetype\psnames\psnamerr.h" />
+    <ClInclude Include="Source\ext\Freetype\psnames\pstables.h" />
+    <ClInclude Include="Source\ext\Freetype\raster\ftmisc.h" />
+    <ClInclude Include="Source\ext\Freetype\raster\ftraster.h" />
+    <ClInclude Include="Source\ext\Freetype\raster\ftrend1.h" />
+    <ClInclude Include="Source\ext\Freetype\raster\rasterrs.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\pngshim.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\sfdriver.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\sferrors.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\sfobjs.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttbdf.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttcmap.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttcmapc.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttcolr.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttcpal.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttkern.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttload.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttmtx.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttpost.h" />
+    <ClInclude Include="Source\ext\Freetype\sfnt\ttsbit.h" />
+    <ClInclude Include="Source\ext\Freetype\smooth\ftgrays.h" />
+    <ClInclude Include="Source\ext\Freetype\smooth\ftsmerrs.h" />
+    <ClInclude Include="Source\ext\Freetype\smooth\ftsmooth.h" />
+    <ClInclude Include="Source\ext\Freetype\truetype\ttdriver.h" />
+    <ClInclude Include="Source\ext\Freetype\truetype\tterrors.h" />
+    <ClInclude Include="Source\ext\Freetype\truetype\ttgload.h" />
+    <ClInclude Include="Source\ext\Freetype\truetype\ttgxvar.h" />
+    <ClInclude Include="Source\ext\Freetype\truetype\ttinterp.h" />
+    <ClInclude Include="Source\ext\Freetype\truetype\ttobjs.h" />
+    <ClInclude Include="Source\ext\Freetype\truetype\ttpload.h" />
+    <ClInclude Include="Source\ext\Freetype\truetype\ttsubpix.h" />
+    <ClInclude Include="Source\ext\Freetype\type1\t1afm.h" />
+    <ClInclude Include="Source\ext\Freetype\type1\t1driver.h" />
+    <ClInclude Include="Source\ext\Freetype\type1\t1errors.h" />
+    <ClInclude Include="Source\ext\Freetype\type1\t1gload.h" />
+    <ClInclude Include="Source\ext\Freetype\type1\t1load.h" />
+    <ClInclude Include="Source\ext\Freetype\type1\t1objs.h" />
+    <ClInclude Include="Source\ext\Freetype\type1\t1parse.h" />
+    <ClInclude Include="Source\ext\Freetype\type1\t1tokens.h" />
+    <ClInclude Include="Source\ext\Freetype\type42\t42drivr.h" />
+    <ClInclude Include="Source\ext\Freetype\type42\t42error.h" />
+    <ClInclude Include="Source\ext\Freetype\type42\t42objs.h" />
+    <ClInclude Include="Source\ext\Freetype\type42\t42parse.h" />
+    <ClInclude Include="Source\ext\Freetype\type42\t42types.h" />
+    <ClInclude Include="Source\ext\Freetype\winfonts\fnterrs.h" />
+    <ClInclude Include="Source\ext\Freetype\winfonts\winfnt.h" />
+    <ClInclude Include="Source\Graphics\ImageData.h" />
+    <ClInclude Include="Source\Graphics\IMGUI\imconfig-SFML.h" />
+    <ClInclude Include="Source\Graphics\IMGUI\imgui-SFML.h" />
+    <ClInclude Include="Source\Graphics\IMGUI\ImguiManager.h" />
+    <ClInclude Include="Source\Graphics\Particle System\ParticleSystem.h" />
+    <ClInclude Include="Source\Graphics\Renderers\BatchRenderer.h" />
+    <ClInclude Include="Source\Graphics\Renderers\Renderer.h" />
+    <ClInclude Include="Source\Graphics\Shader\Shader.h" />
+    <ClInclude Include="Source\Graphics\Buffers\VertexArray.h" />
+    <ClInclude Include="Source\Graphics\Shader\Shader_Code.h" />
+    <ClInclude Include="Source\Utils\DataTypes.h" />
+    <ClInclude Include="Source\Utils\IO\FileReader.h" />
+    <ClInclude Include="Source\Utils\Logger.h" />
+    <ClInclude Include="Source\Utils\Memory\PoolAllocater.h" />
+    <ClInclude Include="Source\Utils\Memory\MemAllocater.h" />
+    <ClInclude Include="Source\Window\FPS_Counter.h" />
+    <ClInclude Include="Source\Window\Input.h" />
+    <ClInclude Include="Source\Window\Window.h" />
+    <ClInclude Include="Source\Window\WindowSettings.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Shaders\Shader.pxsl" />
+    <None Include="res\Shaders\Sprite.pxsl" />
+    <None Include="res\Shaders\TestShader.shader" />
+    <None Include="res\Shaders\Tile_Layer.pxsl" />
+    <None Include="res\Shaders\Struct.shstr" />
+    <None Include="res\Shaders\shader.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Finalising Notes.txt" />
+    <Text Include="_Ideas.txt" />
+    <Text Include="_TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\ext\Freetype\base\ftver.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

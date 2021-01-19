@@ -1,0 +1,50 @@
+#shader vertex
+#version 330 core
+
+uniform mat4 PX_projection;
+
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec4 col;
+layout(location = 2) in vec2 uvCoor;
+layout(location = 3) in float tid;
+
+
+out vec2 uv;
+out vec4 color;
+out float id;
+
+
+void main()
+{
+   gl_Position = PX_projection * vec4(position,1);
+
+   color = col;
+   uv = uvCoor;
+   id = tid;
+}
+
+
+#shader fragment
+#version 330 core
+
+uniform sampler2D textures[16];
+
+in vec2 uv;
+in vec4 color;
+in float id;
+
+out vec4 o_color;
+
+void main()
+{
+   int tid = int(id);
+   //tid = 2;
+
+   if(tid < 0)
+     o_color = color;
+   else
+     o_color = texture(textures[tid], uv) * vec4(1,0,0,1);
+
+
+  //o_color = vec4(tid,0,0,1);
+}

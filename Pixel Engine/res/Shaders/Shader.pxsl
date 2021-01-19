@@ -1,0 +1,38 @@
+#shader vertex
+#version 330 core
+
+uniform mat4 PX_projection;
+
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec4 color;
+layout(location = 2) in vec2 uvCoor;
+
+out vec2 uv;
+out vec4 col;
+
+
+void main()
+{
+   gl_Position = PX_projection * vec4(position,1);
+
+   col = color;
+   uv = uvCoor;
+}
+
+
+#shader fragment
+#version 330 core
+
+uniform sampler2D tex;
+
+
+in vec2 uv;
+in vec4 col;
+
+out vec4 color;
+
+void main()
+{
+   color = texture(tex, uv);
+  // color = vec4(1,1,1,1);
+}

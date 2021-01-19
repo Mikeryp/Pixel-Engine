@@ -1,0 +1,21 @@
+.....................................................
+
+Architectural
+.....................................................
+
+* BatchRenderer needs to access the game camera to get the projection matrix
+  in order to scale the fonts appropriately.
+
+* Figure out the implementation of grouping Renderables.
+
+* Link in the input system with the window system properly.
+
+
+.....................................................
+
+Features
+.....................................................
+
+* GameObjects will be created using a 'CreateObject' function
+* Create a custom allocator for allocating GameObjects.
+* Clear all the warnings as well!! XD.  NO but seriosly, do it.
